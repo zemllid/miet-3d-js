@@ -39,6 +39,7 @@ p.graytext {
   padding-bottom: 24px;
   padding-top: 24px;
   width: fit-content;
+  position: relative;
 }
 
 .card {
@@ -67,14 +68,14 @@ img {
 
 .smallbutton.right {
   opacity: 0.8;
-  position: relative;
-  right: 72px;
+  position: absolute;
+  right: 24px;
 }
 
 .smallbutton.left {
   opacity: 0.6;
-  position: relative;
-  left: 72px;
+  position: absolute;
+  left: 24px;
 }
 
 .icons {
@@ -107,6 +108,7 @@ img {
   border: 2px #6e8a72;
   font-weight: bold;
   max-width: 120px;
+  text-align: center;
 }
 
 .imgicon {
