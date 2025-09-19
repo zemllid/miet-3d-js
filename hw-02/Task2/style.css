@@ -1,0 +1,90 @@
+body {
+  padding: 40px 40px 0px 40px;
+  background: #f6fff7;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  gap: 12px;
+}
+
+span.graytext {
+  font-size: 13px;
+  color: #969696;
+  font-weight: bold;
+}
+
+p.graytext {
+  font-size: 16px;
+  color: #969696;
+  max-width: 480px;
+  text-align: center;
+}
+
+.button {
+  background: #6cb200;
+  color: #f3fcf4;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  width: fit-content;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+img {
+  border-radius: 16px;
+  max-height: 276px;
+}
+
+.smallbutton {
+  background: #6cb200;
+  color: #f3fcf4;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 14px;
+}
+
+.smallbutton.right {
+  opacity: 0.8;
+  position: relative;
+  right: 72px;
+}
+
+.smallbutton.left {
+  opacity: 0.6;
+  position: relative;
+  left: 72px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  max-width: 24px;
+  border-radius: 0px;
+}
