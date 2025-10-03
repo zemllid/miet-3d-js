@@ -1,12 +1,12 @@
 //Задание 1
-var adminName, userName;
+let adminName, userName;
 userName = "Габбро";
 adminName = userName;
 alert(adminName);
 
 //Задание 2
-var planetName, currentUserName;
-var timeloopNumber, shipState;
+let planetName, currentUserName;
+let timeloopNumber, shipState;
 
 //Задание 3
 const product = {
