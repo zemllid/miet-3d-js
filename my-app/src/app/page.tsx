@@ -1,38 +1,38 @@
-'use client'
+'use client';
 //import Image from "next/image";
-import { sheets } from "@/data/sheets";
-import { SheetCard } from "@/components/SheetCard";
-import { CatalogFilters } from "@/components/CatalogFilters";
-import { useSearchParams } from "next/navigation";
+import { sheets } from '@/data/sheets';
+import { SheetCard } from '@/components/SheetCard';
+import { CatalogFilters } from '@/components/CatalogFilters';
+import { useSearchParams } from 'next/navigation';
+import { Difficulty } from '@/types/sheet';
 
 export default function CatalogPage() {
-  const searchParams = useSearchParams();
-  const difficultyFilter = searchParams.get("difficulty") as "easy" | "medium" | "hard" | "all" | null;
+    const searchParams = useSearchParams();
+    const difficultyFilter = searchParams.get('difficulty') as Difficulty | 'all' | null;
 
-  const filteredSheets = sheets.filter((sheet) => {
-    if (!difficultyFilter || difficultyFilter === "all") return true;
-    return sheet.difficulty === difficultyFilter;
-  });
+    const filteredSheets = sheets.filter(sheet => {
+        if (!difficultyFilter || difficultyFilter === 'all') return true;
+        return sheet.difficulty === difficultyFilter;
+    });
 
-  return (
-    <div>
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold tracking-tight">Каталог нот</h1>
-        <CatalogFilters />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredSheets.map((sheet) => (
-          <SheetCard key={sheet.id} sheet={sheet} />
-        ))}
-      </div>
-      {filteredSheets.length === 0 && (
-        <p className="text-center text-muted-foreground py-12 text-lg">Ноты не найдены</p>
-      )}
-    </div>
-  );
+    return (
+        <div>
+            <div className='flex justify-between items-center mb-8'>
+                <h1 className='text-3xl font-bold tracking-tight'>Каталог нот</h1>
+                <CatalogFilters />
+            </div>
+            {filteredSheets.length > 0 ? (
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                    {filteredSheets.map(sheet => (
+                        <SheetCard key={sheet.id} sheet={sheet} />
+                    ))}
+                </div>
+            ) : (
+                <p className='text-center text-muted-foreground py-12 text-lg'>Ноты не найдены</p>
+            )}
+        </div>
+    );
 }
-
-
 
 // export default function Home() {
 //   return (

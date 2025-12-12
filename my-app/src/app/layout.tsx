@@ -1,28 +1,40 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { ThemeProvider } from 'next-themes';
 
-const inter = Inter({ subsets: ["latin", "cyrillic"] });
+const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
-  title: "MuseScore mini-clone",
-  description: "Мини-клон каталога нот",
+    title: {
+        default: 'MuseScore mini-clone',
+        template: '%s | MuseScore mini-clone',
+    },
+    description: 'Мини-клон каталога нот',
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="ru">
-      <body className={inter.className}>
-        <main className="container mx-auto py-12 px-4">{children}</main>
-      </body>
-    </html>
-  );
+    return (
+        <html lang='ru'>
+            <body className={inter.className}>
+                <ThemeProvider
+                    attribute='class'
+                    defaultTheme='light'
+                    disableTransitionOnChange
+                    themes={['light', 'dark', 'contrast']}
+                >
+                    <ThemeToggle />
+                    <main className='container mx-auto py-12 px-4'>{children}</main>
+                </ThemeProvider>
+            </body>
+        </html>
+    );
 }
-
 
 // import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
@@ -58,4 +70,3 @@ export default function RootLayout({
 //     </html>
 //   );
 // }
-
