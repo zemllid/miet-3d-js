@@ -7,5 +7,8 @@ export interface Sheet {
   difficulty: Difficulty;
   instrument: string;
   image: string;
+  imageBase: string; //"sheet1" для sheet1.1.jpg, sheet1.2.jpg и т.д.
+  totalPages: number;
+  overview: string;
   description: string;
 }
