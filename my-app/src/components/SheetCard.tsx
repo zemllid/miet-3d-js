@@ -14,7 +14,7 @@ export function SheetCard({ sheet }: SheetCardProps) {
             <Card className='w-full hover:shadow-lg transition-shadow cursor-pointer border-0 bg-card'>
                 <CardHeader className='p-0'>
                     <div className='relative h-48 w-full'>
-                        <Image src={sheet.image} alt={sheet.title} fill className='object-cover rounded-t-lg' />
+                        <Image src={sheet.imagePreview} alt={sheet.title} fill className='object-cover rounded-t-lg' />
                     </div>
                 </CardHeader>
                 <CardContent className='p-6 space-y-2'>
